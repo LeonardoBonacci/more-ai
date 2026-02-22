@@ -1,0 +1,35 @@
+spring.application.name: moreai
+
+spring:
+  ai:
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        options:
+          model: llama3.1:latest
+          temperature: 0.8
+    chat:
+      client:
+        observations:
+          log-prompt: true
+          log-completion: true
+      observations:
+        log-prompt: true
+        log-completion: true
+    tools:
+      observations:
+        include-content: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  tracing:
+    sampling:
+      probability: 1.0
+
+logging:
+  level:
+    io.micrometer.tracing: DEBUG
+    org.springframework.ai: DEBUG

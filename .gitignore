@@ -25,3 +25,9 @@ replay_pid*
 
 /target/
 mvnw*
+
+# IDE files
+.classpath
+.factorypath
+.project
+.settings/
